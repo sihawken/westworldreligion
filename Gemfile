@@ -4,10 +4,10 @@ source "https://rubygems.org"
 
 git_source(:github) { |repo_name| "https://github.com/sihawken/westworldreligion/" }
 
-Test without github-pages
+# Test without github-pages
 
-# gem "rails"
-gem "github-pages", group: :jekyll_plugins
+# # gem "rails"
+# gem "github-pages", group: :jekyll_plugins
 
 Test without windows
 
