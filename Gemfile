@@ -2,6 +2,11 @@
 
 source "https://rubygems.org"
 
+git_source(:github) { |repo_name| "https://github.com/sihawken/westworldreligion/" }
+
+# gem "rails"
+gem "github-pages", group: :jekyll_plugins
+
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
 platforms :mingw, :x64_mingw, :mswin, :jruby do
@@ -13,4 +18,3 @@ end
 gem "wdm", "~> 0.1", :platforms => [:mingw, :x64_mingw, :mswin]
   
 gemspec
-
