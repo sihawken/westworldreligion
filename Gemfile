@@ -9,7 +9,7 @@ git_source(:github) { |repo_name| "https://github.com/sihawken/westworldreligion
 # # gem "rails"
 # gem "github-pages", group: :jekyll_plugins
 
-Test without windows
+# Test without windows
 
 # # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # # and associated library.
