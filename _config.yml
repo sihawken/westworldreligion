@@ -10,10 +10,10 @@
 ############################
 
 # Name of website
-title: Simon's website
+title: Christian Theology in Westworld (RELS 2812)
 
 # Your name to show in the footer
-author: Some Person
+author: Simon Hawkenson
 
 ###############################################
 # --- List of links in the navigation bar --- #
@@ -22,9 +22,8 @@ author: Some Person
 navbar-links:
   About Me: "aboutme"
   Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
+    - About RELS 2812: "https://www.mun.ca/university-calendar/st-johns-campus/faculty-of-humanities-and-social-sciences/16/27/#d.en.391997"
+  # Author's home: "https://deanattali.com"
 
 ################
 # --- Logo --- #
