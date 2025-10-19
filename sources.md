@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Bibliography
+title: Sources
 subtitle: A list of sources I will be using.
 ---
 
