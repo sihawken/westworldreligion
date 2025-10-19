@@ -1,16 +1,15 @@
 ---
 layout: page
-title: About me
-subtitle: Why you'd want to go on a date with me
+title: Bibliography
+subtitle: A list of sources I will be using.
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+## Books
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+#### Gittinger, J., & Sheinfeld, S. (2020). Theology and Westworld. Rowman & Littlefield.
 
-What else do you need?
+This book focuses on theology and pop culture in the HBO series Westworld.
 
-### My story
+#### T & T Clark Handbook of Christian Eschatology
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+#### Fountain of Salvation: Trinity and Soteriology
