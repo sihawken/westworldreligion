@@ -1,3 +1,0 @@
-twind.setup({
-  preflight: false,
-})
