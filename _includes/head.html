@@ -175,12 +175,7 @@
 <script src="https://cdn.twind.style/" crossorigin></script>
 
 <script>
-  twind.setup({
-    preflight: false, // do not include base style reset (default: use tailwind preflight)
-    hash: true, // hash all generated class names (default: false)
-})
-
-  twind.defineConfig({
+twind.defineConfig({
   hash(className) {
     return `tw-${className}`
   },
