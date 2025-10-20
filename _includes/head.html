@@ -172,7 +172,18 @@
     {% endfor %}
   {% endif %}
 
-<script type="module">
+<script src="https://cdn.twind.style/" crossorigin></script>
+
+<script>
+  twind.install({
+    presets: [
+      twind.presetTailwind(),
+      twind.presetAutoprefix(),
+    ],
+  });
+</script>
+
+<!-- <script type="module">
   // twind
   import install from 'https://cdn.jsdelivr.net/npm/@twind/core@1.1.3/core.global.js';
   import presetAutoprefix from 'https://cdn.jsdelivr.net/npm/@twind/preset-autoprefix@1.0.7/preset-autoprefix.global.js';
@@ -183,6 +194,6 @@
     presets: [presetAutoprefix(), presetTailwind()],
   })
 
-</script>
+</script> -->
 
 </head>
