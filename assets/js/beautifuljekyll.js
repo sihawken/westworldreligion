@@ -7,7 +7,7 @@ let BeautifulJekyllJS = {
 
   init : function() {
     // show the big header image
-    BeautifulJekyllJS.initImms();
+    BeautifulJekyllJS.initImgs(); // Corrected function name
 
     BeautifulJekyllJS.initSearch();
   },
