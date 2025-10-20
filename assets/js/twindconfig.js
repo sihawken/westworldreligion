@@ -3,14 +3,7 @@ import presetTailwind from 'https://cdn.twind.style/preset-tailwind';
 
 const config = defineConfig({
   presets: [presetTailwind()],
-  prefix: 'tw-', // Your desired prefix
+  prefix: 'tw-',
 });
 
-let TwindConfig = {
-
-  init : function() {
-    install(config) 
-  }
-};
-
-document.addEventListener('DOMContentLoaded', TwindConfig.init);
+install(config);
