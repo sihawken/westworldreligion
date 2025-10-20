@@ -16,7 +16,7 @@
     <svg class="h-3 w-3 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
   </button>
 
-  <div :class="{'block': mobileMenuOpen, 'hidden': !mobileMenuOpen}" class="w-full flex-grow xl:flex xl:items-center xl:w-auto" id="main-navbar">
+  <div :class="{ 'hidden': !mobileMenuOpen }" class="w-full flex-grow hidden xl:flex xl:items-center xl:w-auto" id="main-navbar">
     <ul class="flex flex-col xl:flex-row list-none xl:ml-auto items-start xl:items-center">
       {%- for link in site.navbar-links -%}
         {%- if link[1].first %}
