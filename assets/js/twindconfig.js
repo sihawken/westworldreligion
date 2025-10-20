@@ -1,6 +1,3 @@
-const config = defineConfig({
-  presets: [presetTailwind()],
-  prefix: 'tw-',
-});
-
-install(config);
+twind.install({
+      prefix: 'tw-', // Your desired prefix
+    })
