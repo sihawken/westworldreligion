@@ -1,4 +1,4 @@
 twind.install({
-      prefix: 'tw-', // Your desired prefix
+      prefix: 'tw-',
       presets: [twind.presetAutoprefix(/* options */), twind.presetTailwind(/* options */)],
     })
