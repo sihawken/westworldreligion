@@ -1,40 +1,47 @@
-<nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom {% if page.nav-short %}top-nav-short-permanent{% else %}top-nav-regular{% endif %}">
-
+<nav
+  x-data="{ mobileMenuOpen: false, dropdownOpen: false }"
+  class="fixed top-0 w-full z-50 flex items-center justify-between flex-wrap bg-white p-4 shadow-md navbar-custom {% if page.nav-short %}top-nav-short-permanent{% else %}top-nav-regular{% endif %}"
+>
   {%- if site.title-img -%}
-    <a class="navbar-brand navbar-brand-logo" href="{{ '/' | absolute_url }}"><img alt="{{ site.title }} Logo" src="{{ site.title-img | relative_url}}"/></a>
+    <a class="flex items-center flex-shrink-0 mr-6" href="{{ '/' | absolute_url }}">
+      <img alt="{{ site.title }} Logo" src="{{ site.title-img | relative_url}}"/>
+    </a>
   {%- elsif site.title -%}
-    <a class="navbar-brand" href="{{ '/' | absolute_url }}">{{ site.title }}</a>
+    <a class="font-semibold text-xl tracking-tight" href="{{ '/' | absolute_url }}">{{ site.title }}</a>
   {%- endif -%}
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+  <button @click="mobileMenuOpen = !mobileMenuOpen" class="xl:hidden block p-2 border rounded text-gray-600 border-gray-600 hover:text-black hover:border-black" type="button" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <svg class="h-3 w-3 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
   </button>
 
-  <div class="collapse navbar-collapse" id="main-navbar">
-    <ul class="navbar-nav ml-auto">
+  <div :class="{'block': mobileMenuOpen, 'hidden': !mobileMenuOpen}" class="w-full flex-grow xl:flex xl:items-center xl:w-auto" id="main-navbar">
+    <ul class="flex flex-col xl:flex-row list-none xl:ml-auto items-start xl:items-center">
       {%- for link in site.navbar-links -%}
         {%- if link[1].first %}
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ link[0] }}</a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <li class="relative">
+            <a @click="dropdownOpen = !dropdownOpen" @click.away="dropdownOpen = false" class="flex items-center mt-4 xl:mt-0 px-3 py-2 text-gray-700 hover:text-black cursor-pointer" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{ link[0] }}
+              <svg class="h-4 w-4 fill-current ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+            </a>
+            <div x-show="dropdownOpen" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50" aria-labelledby="navbarDropdown">
               {%- for childlink in link[1] -%}
                 {%- for linkparts in childlink %}
-                  <a class="dropdown-item" href="{{ linkparts[1] | relative_url }}">{{ linkparts[0] }}</a>
+                  <a class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="{{ linkparts[1] | relative_url }}">{{ linkparts[0] }}</a>
                 {%- endfor -%}
               {%- endfor %}
             </div>
           </li>
         {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="{{ link[1] | relative_url }}">{{ link[0] }}</a>
+            <a class="block mt-4 xl:inline-block xl:mt-0 px-3 py-2 text-gray-700 hover:text-black" href="{{ link[1] | relative_url }}">{{ link[0] }}</a>
           </li>
         {%- endif -%}
       {%- endfor -%}
       {% if site.post_search %}
         <li class="nav-item">
-          <a class="nav-link" id="nav-search-link" href="#" title="Search">
-            <span id="nav-search-icon" class="fa fa-search"></span>
-            <span id="nav-search-text">Search</span>
+          <a class="flex items-center mt-4 xl:inline-block xl:mt-0 px-3 py-2 text-gray-700 hover:text-black" id="nav-search-link" href="#" title="Search">
+            <span id="nav-search-icon" class="fa fa-search mr-2 xl:mr-0"></span>
+            <span id="nav-search-text" class="xl:hidden">Search</span>
           </a>
         </li>
       {%- endif -%}
@@ -48,7 +55,7 @@
   {% endif %}
 
   {% if site.avatar and page.show-avatar != false %}
-    <div class="avatar-container">
+    <div class="avatar-container ml-4 hidden xl:block">
       <div class="avatar-img-border">
         <a href="{{ '/' | absolute_url }}">
           <img alt="Navigation bar avatar" class="avatar-img" src="{{ site.avatar | relative_url }}" />
@@ -56,7 +63,6 @@
       </div>
     </div>
   {% endif %}
-
 </nav>
 
 {% include search.html %}
