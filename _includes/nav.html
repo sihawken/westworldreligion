@@ -1,5 +1,7 @@
 <nav
-  x-data="{ mobileMenuOpen: false, dropdownOpen: false }"
+  x-data="{ mobileMenuOpen: false, dropdownOpen: false, navShort: (window.pageYOffset > 50) }"
+  @scroll.window="navShort = (window.pageYOffset > 50)"
+  :class="{ 'top-nav-short': navShort }"
   class="fixed top-0 w-full z-50 flex items-center justify-between flex-wrap bg-white p-4 shadow-md navbar-custom {% if page.nav-short %}top-nav-short-permanent{% else %}top-nav-regular{% endif %}"
 >
   {%- if site.title-img -%}
@@ -55,7 +57,7 @@
   {% endif %}
 
   {% if site.avatar and page.show-avatar != false %}
-    <div class="avatar-container ml-4 hidden xl:block">
+    <div :class="{'hidden': mobileMenuOpen || navShort }" class="avatar-container ml-4 hidden xl:block">
       <div class="avatar-img-border">
         <a href="{{ '/' | absolute_url }}">
           <img alt="Navigation bar avatar" class="avatar-img" src="{{ site.avatar | relative_url }}" />
